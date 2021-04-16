@@ -33,7 +33,7 @@ const interceptorExecutor = (chain) => {
       }
     }
 
-    context = handler(context);
+    context = await handler(context);
 
     while (context.stack.length > 0) {
       const interceptor = context.stack[context.stack.length - 1];
